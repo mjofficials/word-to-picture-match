@@ -1,0 +1,27 @@
+*** Writing a script that presents Match word to image***
+on the array you have:
+1. words (will be DIV or SPAN) on the other
+2. images (will be DIV) on one side and
+3. set order place of the image
+4. set order place of the word
+5. SPAN or DIV - class (to the image)
+6. SPAN or DIV - class (to the word)
+7. Ability to change background even though class is sent to the word class , if its 0 no need to change .
+
+Example of an array:
+*** If you are more comfortable working with several arrays we have no problem
+let activities = [
+['lion', 'lion.png ',1,4, 'classAtoimage', 'classBtoword ', '#445566' ],
+['tomato', 'tomato.png ',2,1, 'classAtoimage', 'classCtoword ' , '#445566'],
+['car', 'car.png ',3,5, 'classAtoimage', 'classDtoword ','0' ],
+['ice cream', 'ice_cream.png ',4,2, 'classAtoimage', 'classEtoword ','0' ],
+['chicken', 'chicken.png ',5,3, 'classAtoimage', 'classEtoword ', '#445566'' ]
+];
+
+a. The display should be as in the attached image. (With circle)
+b. It will be possible to draw a line between the circles
+c . In case of a match the line turns green.
+d. In case of mismatch the line turns red.
+e. A new click on the circle will rest the line and allow a new line to be drawn.
+f. At the end of all the lines and all of them are green, a DIV appearance (it will contain a success sentence).
+

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: start;
+}
+
+.green {
+  fill: green;
+}
+.red {
+  fill: red;
+}
+#line-2-match,
+#line-3-match,
+#line-4-match,
+#line-5-match,
+.line-1,
+.line-2,
+.line-3,
+.line-4,
+.line-5 {
+  display: none;
+}
+
+#line-1-match,
+#line-2-match,
+#line-3-match,
+#line-4-match,
+#line-5-match {
+  display: none;
+  stroke-linejoin: miter;
+  stroke-dasharray: 3200;
+  stroke-dashoffset: 3200;
+  animation: line-match-1 6s linear forwards;
+}
+
+@keyframes line-match-1 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
