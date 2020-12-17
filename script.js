@@ -46,38 +46,35 @@ const line3 = document.getElementById('line-3-match');
 const line4 = document.getElementById('line-4-match');
 const line5 = document.getElementById('line-5-match');
 
-// circleEndArr.map(x => x.style.fill = "red");
+// un-matched lines
+const line1Unmatch1 = document.getElementById('line-1-match-1');
+const line1Unmatch2 = document.getElementById('line-1-match-2');
+const line1Unmatch3 = document.getElementById('line-1-match-3');
+const line1Unmatch4 = document.getElementById('line-1-match-4');
 
-// btnArr.map(x => {
-//     x.addEventListener("click", function (e) {
-//         tomatoCircleStart.style.fill = "green";
-//     })
-// })
+const line2Unmatch1 = document.getElementById('line-2-match-1');
+const line2Unmatch2 = document.getElementById('line-2-match-2');
+const line2Unmatch3 = document.getElementById('line-2-match-3');
+const line2Unmatch4 = document.getElementById('line-2-match-4');
 
-// adding eventListener's to buttons
+const line3Unmatch1 = document.getElementById('line-3-match-1');
+const line3Unmatch2 = document.getElementById('line-3-match-2');
+const line3Unmatch3 = document.getElementById('line-3-match-3');
+const line3Unmatch4 = document.getElementById('line-3-match-4');
 
-// btnArr.forEach(item => {
-//     item.addEventListener('click', () => {
-//         for (let i = 0; i < circleEndArr.length; i++) {
-//             circleStartArr[i].classList.toggle('activated');
-//         }
-//     })
-// });
+const line4Unmatch1 = document.getElementById('line-4-match-1');
+const line4Unmatch2 = document.getElementById('line-4-match-2');
+const line4Unmatch3 = document.getElementById('line-4-match-3');
+const line4Unmatch4 = document.getElementById('line-4-match-4');
 
-tomatoBtn.addEventListener('click', () => tomatoCircleStart.classList.toggle('green'));
+
+
 iceCreamBtn.addEventListener('click', () => iceCreamCircleStart.classList.toggle('green'));
 chickenBtn.addEventListener('click', () => chickenCircleStart.classList.toggle('green'));
 lionBtn.addEventListener('click', () => lionCircleStart.classList.toggle('green'));
 carBtn.addEventListener('click', () => carCircleStart.classList.toggle('green'));
 
-// preventing unmatched colored circles
-
-
-
 // adding eventListener's to images
-lionImg.addEventListener('click', () => lionCircleEnd.classList.toggle('green'));
-carImg.addEventListener('click', () => carCircleEnd.classList.toggle('green'));
-
 
 // tomato image
 tomatoImg.addEventListener('click', () => {
@@ -109,6 +106,38 @@ chickenImg.addEventListener('click', () => {
     }
 });
 
+// lion image
+lionImg.addEventListener('click', () => {
+    lionCircleEnd.classList.toggle('green')
+    if (lionCircleStart.classList.contains("green") && lionCircleEnd.classList.contains("green")) {
+        line4.style.display = "block";
+    } else {
+        line4.style.display = "none";
+    }
+});
 
-carImg.addEventListener('click', () => carCircleEnd.classList.toggle('green'));
+//  car image
+carImg.addEventListener('click', () => {
+    carCircleEnd.classList.toggle('green')
+    if (carCircleEnd.classList.contains("green") && carCircleStart.classList.contains("green")) {
+        line5.style.display = "block";
+    } else {
+        line5.style.display = "none";
+    }
+});
+
+// BELOW CODE FOR INCORRECT PATHS
+
+// preventing unmatched colored circles
+
+// tomato image
+
+tomatoBtn.addEventListener('click', () => {
+    tomatoCircleStart.classList.toggle('green')
+    let n = circleEndArr.slice(1);
+    n.map(item => {
+        item.classList.toggle("red");
+        item.style.visibility = "none";
+    })
+});
 

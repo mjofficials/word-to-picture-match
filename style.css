@@ -11,17 +11,16 @@ body {
   fill: green;
 }
 .red {
+  visibility: hidden;
   fill: red;
+}
+.white {
+  fill: white;
 }
 #line-2-match,
 #line-3-match,
 #line-4-match,
-#line-5-match,
-.line-1,
-.line-2,
-.line-3,
-.line-4,
-.line-5 {
+#line-5-match {
   display: none;
 }
 
@@ -31,13 +30,44 @@ body {
 #line-4-match,
 #line-5-match {
   display: none;
-  stroke-linejoin: miter;
   stroke-dasharray: 3200;
   stroke-dashoffset: 3200;
-  animation: line-match-1 6s linear forwards;
+  animation: line-match 2s linear forwards;
 }
 
-@keyframes line-match-1 {
+@keyframes line-match {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#line-1-unmatch-1,
+#line-1-unmatch-2,
+#line-1-unmatch-3,
+#line-1-unmatch-4,
+#line-2-unmatch-1,
+#line-2-unmatch-2,
+#line-2-unmatch-3,
+#line-2-unmatch-4,
+#line-3-unmatch-1,
+#line-3-unmatch-2,
+#line-3-unmatch-3,
+#line-3-unmatch-4,
+#line-4-unmatch-1,
+#line-4-unmatch-2,
+#line-4-unmatch-3,
+#line-4-unmatch-4,
+#line-5-unmatch-1,
+#line-5-unmatch-2,
+#line-5-unmatch-3,
+#line-5-unmatch-4 {
+  display: none;
+  display: none;
+  stroke-dasharray: 3200;
+  stroke-dashoffset: 3200;
+  animation: line-unmatch 2s linear forwards;
+}
+@keyframes line-unmatch {
   to {
     stroke-dashoffset: 0;
   }
