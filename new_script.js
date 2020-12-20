@@ -1,73 +1,62 @@
-// Testing if-else 
-const tomato = document.getElementById('inputA');
-const iceCream = document.getElementById('inputB');
-const chicken = document.getElementById('inputC');
-const lion = document.getElementById('inputD');
-const car = document.getElementById('inputE');
-// tomato.addEventListener('change', (e) => {
-//     (e.target.checked || !(tomato.classList.contains('classAtoImage'))) ? (console.log('Tomato ON'), tomato.classList.add('classAtoImage'))
-//         : ((tomato.classList.remove('classAtoImage'), console.log('Tomato OFF')));
-// });
+// word inputs
+const tomatoWord = document.getElementById('inputA');
+const iceCreamWord = document.getElementById('inputB');
+const chickenWord = document.getElementById('inputC');
+const lionWord = document.getElementById('inputD');
+const carWord = document.getElementById('inputE');
+
+// image inputs
+const lionImg = document.getElementById('inputF');
+const tomatoImg = document.getElementById('inputG');
+const carImg = document.getElementById('inputH');
+const iceCreamImg = document.getElementById('inputI');
+const chickenImg = document.getElementById('inputJ');
+
+// svg path
+const svgPath = document.getElementById('svgPath');
+
+
+// answer arrays
+const testArr2 = ['classAtoImage', 'classBtoWord'];
 
 var testArr = [];
 
-// tomato
-tomato.addEventListener('change', (e) => {
-    if (e.target.checked && !(tomato.classList.contains('classAtoImage'))) {
-        testArr.push('classAtoImage');
-        console.log(testArr);
-    } else {
-        testArr = testArr.filter(e => e !== 'classAtoImage');
-        console.log(testArr);
-    }
-});
-
-// icecream
-iceCream.addEventListener('change', (e) => {
-    if (e.target.checked && !(iceCream.classList.contains('classBtoImage'))) {
-        testArr.push('classBtoImage');
-        console.log(testArr);
-    } else {
-        testArr = testArr.filter(e => e !== 'classBtoImage');
-        console.log(testArr);
-    }
-});
-
-// chicken
-chicken.addEventListener('change', (e) => {
-    if (e.target.checked && !(iceCream.classList.contains('classCtoImage'))) {
-        testArr.push('classCtoImage');
-        console.log(testArr);
-    } else {
-        testArr = testArr.filter(e => e !== 'classCtoImage');
-        console.log(testArr);
-    }
-});
-
-// lion
-lion.addEventListener('change', (e) => {
-    if (e.target.checked && !(iceCream.classList.contains('classDtoImage'))) {
-        testArr.push('classDtoImage');
-        console.log(testArr);
-    } else {
-        testArr = testArr.filter(e => e !== 'classDtoImage');
-        console.log(testArr);
-    }
-});
-// car
-car.addEventListener('change', (e) => {
-    if (e.target.checked && !(iceCream.classList.contains('classEtoImage'))) {
-        testArr.push('classEtoImage');
-        console.log(testArr);
-    } else {
-        testArr = testArr.filter(e => e !== 'classEtoImage');
-        console.log(testArr);
-    }
-});
-
-// color change test
-
-function changeColor() {
-    const change24 = document.styleSheets[0].cssRules[24].style;
-    change24.setProperty('background', 'red');
+// adding event function
+function addEvents(input, cName) {
+    input.addEventListener('change', (e) => {
+        if (e.target.checked && !(input.classList.contains(cName))) {
+            testArr.push(cName);
+            console.log(testArr);
+            matchInArray(testArr, testArr2);
+        } else {
+            testArr = testArr.filter(e => e !== cName);
+            console.log(testArr);
+        }
+    })
 }
+
+// matching array
+const matchInArray = (arr1, arr2) => {
+    if (JSON.stringify(arr1) === JSON.stringify(arr2)) {
+        document.body.style.backgroundColor = '#00ff00'
+        console.log(' matches');
+    } else {
+        document.body.style.backgroundColor = '#ffffff'
+        console.log(' not matching');
+    }
+}
+
+// adding events to words
+addEvents(tomatoWord, 'classAtoImage');
+addEvents(iceCreamWord, 'classBtoImage');
+addEvents(chickenWord, 'classCtoImage');
+addEvents(lionWord, 'classDtoImage');
+addEvents(carWord, 'classEtoImage');
+
+// adding events to images
+addEvents(lionImg, 'classAtoWord');
+addEvents(tomatoImg, 'classBtoWord');
+addEvents(carImg, 'classEtoWord');
+addEvents(iceCreamImg, 'classDtoWord');
+addEvents(chickenImg, 'classCtoWord');
+
