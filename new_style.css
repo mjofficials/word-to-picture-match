@@ -143,16 +143,16 @@ input[type="checkbox"] + span:before {
   right: 20px;
 }
 /* When the checkbox is checked, add a green background */
-/* input[type="checkbox"]:checked + span:before {
-  background: green;
-  content: "";
-} */
-
-/* #inputA:checked + span::before {
+input[type="checkbox"]:checked + span:before {
   background: green;
   content: "";
 }
-#inputF:checked ~ span::before {
+
+#inputA:checked + span::before {
+  background: green;
+  content: "";
+}
+/* #inputF:checked ~ span::before {
   background: red;
   content: "";
 } */
