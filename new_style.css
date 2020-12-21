@@ -58,7 +58,7 @@ label {
   border-radius: 5px;
   color: #ffffff;
   position: absolute;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   bottom: 5px;
 }
 #labelA {
@@ -89,7 +89,7 @@ label {
   justify-content: space-evenly;
 }
 img {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   width: 63.33%;
 }
 
@@ -144,12 +144,12 @@ input[type="checkbox"] + span:before {
 }
 /* When the checkbox is checked, add a green background */
 input[type="checkbox"]:checked + span:before {
-  background: green;
+  background: #445566;
   content: "";
 }
 
 #inputA:checked + span::before {
-  background: green;
+  background: #445566;
   content: "";
 }
 /* #inputF:checked ~ span::before {
@@ -214,4 +214,45 @@ input[type="checkbox"]:checked + span:before {
 }
 .checkmark-10 {
   top: 29px;
+}
+
+/* testing line css */
+
+.outer-div {
+  position: fixed;
+  left: 545px;
+  z-index: -1;
+  top: 75px;
+  display: flex;
+}
+
+.line {
+  background-color: #ffffff;
+  height: 10px;
+  width: 5px;
+  transform: rotate(45deg);
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.transform {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  transform-origin: center;
+}
+.transform-active {
+  background-color: #00ff00;
+  height: 10px;
+  width: 275px;
+  transform: rotate(22deg);
+  position: relative;
+  top: 50px;
+  left: -10px;
+  transform-origin: center;
+}
+#svgPath {
+  width: 50%;
 }

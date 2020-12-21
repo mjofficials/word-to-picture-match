@@ -18,6 +18,7 @@ const svgPath = document.getElementById('svgPath');
 
 // answer arrays
 const testArr2 = ['classAtoImage', 'classBtoWord'];
+const testArr3 = ['classBtoImage', 'classDtoWord'];
 
 var testArr = [];
 
@@ -38,10 +39,10 @@ function addEvents(input, cName) {
 // matching array
 const matchInArray = (arr1, arr2) => {
     if (JSON.stringify(arr1) === JSON.stringify(arr2)) {
-        document.body.style.backgroundColor = '#00ff00'
         console.log(' matches');
+        addLine();
     } else {
-        document.body.style.backgroundColor = '#ffffff'
+        removeLine();
         console.log(' not matching');
     }
 }
@@ -60,3 +61,39 @@ addEvents(carImg, 'classEtoWord');
 addEvents(iceCreamImg, 'classDtoWord');
 addEvents(chickenImg, 'classCtoWord');
 
+// test function
+const testDiv = document.getElementById('myDIV');
+function addLine() {
+    testDiv.classList.add('transform-active');
+}
+
+function removeLine() {
+    testDiv.classList.remove('transform-active');
+}
+
+
+// test function for checkbox checked or not
+
+
+
+function checkChange(ckType) {
+    var ckName = document.getElementsByName(ckType.name);
+    var checked = document.getElementById(ckType.id);
+
+    if (checked.checked) {
+        for (var i = 0; i < ckName.length; i++) {
+
+            if (!ckName[i].checked) {
+
+                ckName[i].disabled = true;
+            } else {
+                ckName[i].disabled = false;
+            }
+        }
+    }
+    else {
+        for (var i = 0; i < ckName.length; i++) {
+            ckName[i].disabled = false;
+        }
+    }
+}
